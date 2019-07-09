@@ -13,17 +13,23 @@
  */
 class PostController extends VanillaController {
 
+    /** @var CommentModel */
+    public $CommentModel;
+
+    /** @var Gdn_Database */
+    public $Database;
+
     /** @var DiscussionModel */
     public $DiscussionModel;
+
+    /** @var DraftModel */
+    public $DraftModel;
 
     /** @var Gdn_Form */
     public $Form;
 
     /** @var array An associative array of form types and their locations. */
     public $FormCollection;
-
-    /** @var array Models to include. */
-    public $Uses = ['Form', 'Database', 'CommentModel', 'DiscussionModel', 'DraftModel'];
 
     /** @var bool Whether or not to show the category dropdown. */
     public $ShowCategorySelector = true;
@@ -36,6 +42,30 @@ class PostController extends VanillaController {
 
     /** @var null|array */
     public $Context = null;
+
+    /**
+     * Setup the controller.
+     *
+     * @param CommentModel $commentModel
+     * @param Gdn_Database $database
+     * @param DiscussionModel $discussionModel
+     * @param DraftModel $draftModel
+     * @param Gdn_Form $form
+     */
+    public function __construct(
+        CommentModel $commentModel,
+        Gdn_Database $database,
+        DiscussionModel $discussionModel,
+        DraftModel $draftModel,
+        Gdn_Form $form
+    ) {
+        $this->CommentModel = $commentModel;
+        $this->Database = $database;
+        $this->DiscussionModel = $discussionModel;
+        $this->DraftModel = $draftModel;
+        $this->Form = $form;
+        parent::__construct();
+    }
 
     /**
      * General "post" form, allows posting of any kind of form. Attach to PostController_AfterFormCollection_Handler.
