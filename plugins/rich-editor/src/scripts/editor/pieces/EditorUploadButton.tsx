@@ -45,6 +45,7 @@ export class EditorUploadButton extends React.Component<IProps, {}> {
                     onChange={this.onInputChange}
                     className={classNames("richEditor-upload", classesRichEditor.upload)}
                     type="file"
+                    multiple
                     accept={this.inputAccepts}
                 />
             </button>
@@ -98,16 +99,20 @@ export class EditorUploadButton extends React.Component<IProps, {}> {
      */
     private onInputChange = () => {
         // Grab the first file.
-        const file =
-            this.inputRef && this.inputRef.current && this.inputRef.current.files && this.inputRef.current.files[0];
+        const files =
+            this.inputRef && this.inputRef.current && this.inputRef.current.files;
         const embedInsertion =
             this.props.quill && (this.props.quill.getModule("embed/insertion") as EmbedInsertionModule);
 
-        if (file && embedInsertion) {
-            if (this.props.type === "image" && isFileImage(file)) {
-                embedInsertion.createImageEmbed(file);
+        if (files && embedInsertion) {
+            if (this.props.type === "image" && isFileImage(files[0])) {
+                for (let i = 0; i < files.length; i++) {
+                    embedInsertion.createImageEmbed(files[i]);
+                }
             } else {
-                embedInsertion.createFileEmbed(file);
+                for (let i = 0; i < files.length; i++) {
+                    embedInsertion.createFileEmbed(files[i]);
+                }
             }
         }
     };

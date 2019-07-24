@@ -46,12 +46,38 @@ export function createTrackableRequest(
 /**
  * Upload an image using Vanilla's API v2.
  *
- * @param file - The file to upload.
+ * @param file - File to upload.
  */
 export async function uploadFile(file: File, requestConfig: AxiosRequestConfig = {}) {
     let allowedExtensions = getMeta("upload.allowedExtensions", []) as string[];
     allowedExtensions = allowedExtensions.map((ext: string) => ext.toLowerCase());
     const maxSize = getMeta("upload.maxSize", 0);
+    //const maxFileUploads = getMeta("upload.maxFileUploads", 20) > files.length ? files.length : getMeta("upload.maxFileUploads", 20);
+
+    // for (let i = 0; i < maxFileUploads; i++) {
+    //     const file = files[i];
+    //     const filePieces = file.name.split(".");
+    //     const extension = filePieces[filePieces.length - 1] || "";
+    //
+    //     if (file.size > maxSize) {
+    //         const humanSize = humanFileSize(maxSize);
+    //         const stringTotal: string = humanSize.amount + humanSize.unitAbbr;
+    //         const message = sprintf(t("The uploaded file was too big (max %s)."), stringTotal);
+    //         throw new Error(message);
+    //     } else if (!allowedExtensions.includes(extension.toLowerCase())) {
+    //         const attachmentsString = allowedExtensions.join(", ");
+    //         const message = sprintf(
+    //             t(
+    //                 "The uploaded file did not have an allowed extension. \nOnly the following extensions are allowed. \n%s.",
+    //             ),
+    //             attachmentsString,
+    //         );
+    //         throw new Error(message);
+    //     }
+    //
+    //     data.append("file", file, file.name);
+    // }
+
     const filePieces = file.name.split(".");
     const extension = filePieces[filePieces.length - 1] || "";
 

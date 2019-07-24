@@ -38,6 +38,9 @@ class SiteMeta implements \JsonSerializable {
     /** @var int */
     private $maxUploadSize;
 
+    /** @var int  */
+    private $maxFileUploads;
+
     /** @var string */
     private $localeKey;
 
@@ -75,6 +78,7 @@ class SiteMeta implements \JsonSerializable {
         // Fetch Uploading metadata.
         $this->allowedExtensions = $config->get('Garden.Upload.AllowedFileExtensions', []);
         $maxSize = $config->get('Garden.Upload.MaxFileSize', ini_get('upload_max_filesize'));
+        $this->maxFileUploads = $config->get('Garden.Upload.maxFileUploads', ini_get('max_file_uploads'));
         $this->maxUploadSize = \Gdn_Upload::unformatFileSize($maxSize);
 
         // localization
@@ -117,6 +121,7 @@ class SiteMeta implements \JsonSerializable {
             ],
             'upload' => [
                 'maxSize' => $this->maxUploadSize,
+                'maxFileUploads' => $this->maxFileUploads,
                 'allowedExtensions' => $this->allowedExtensions,
             ],
         ];
