@@ -28,7 +28,7 @@ export function ImageEmbed(props: IProps) {
 
     return (
         <DeviceProvider>
-            <div className={classNames("embedExternal-content", embedMenuClasses().imageContainer)}>
+            <div className={classNames(embedMenuClasses().imageContainer, props.inEditor && embedMenuClasses().menuInsets)}>
                 <EmbedContent type="Image" className="u-excludeFromPointerEvents" inEditor={props.inEditor}>
                     <div ref={divRef} className="embedImage-link">
                         <img className="embedImage-img" src={props.url} alt={props.name} />

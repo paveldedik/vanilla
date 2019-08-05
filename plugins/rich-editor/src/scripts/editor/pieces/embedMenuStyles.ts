@@ -97,6 +97,10 @@ export const embedMenuClasses = useThemeCache(() => {
         }),
     );
 
+    const menuInsets = style("embedEditorInsert", {
+        marginLeft: 30,
+    });
+
     return {
         root,
         form,
@@ -104,5 +108,6 @@ export const embedMenuClasses = useThemeCache(() => {
         paragraph,
         verticalPadding,
         embedMetaDataMenu,
+        menuInsets,
     };
 });
