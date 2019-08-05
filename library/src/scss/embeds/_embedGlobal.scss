@@ -102,6 +102,7 @@
         user-select: none;
     }
 
+    .embed-focusableElement,
     .embedExternal-content,
     .embedLinkLoader-link {
         cursor: pointer;
@@ -137,4 +138,8 @@
 .embed-focusableElement {
     cursor: pointer;
     //display: inline-flex;
+}
+
+.margin-left-30 {
+    margin-left: 30px;
 }
