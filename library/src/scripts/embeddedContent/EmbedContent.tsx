@@ -30,7 +30,6 @@ export function EmbedContent(props: IProps) {
             aria-describedby={id}
             aria-label={"External embed content - " + props.type}
             className={classNames(props.className, classes.root, {
-            // className={classNames(props.className, classes.root, !props.noBaseClass && "embedExternal-content", {
                 [FOCUS_CLASS]: props.inEditor,
                 [classes.small]: props.isSmall,
             })}

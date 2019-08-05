@@ -83,7 +83,7 @@ export function ImageEmbedMenu(props: IProps) {
                                     value: alt,
                                     onChange: handleTextChange,
                                     inputRef,
-                                    placeholder: t("(Image description)"),
+                                    placeholder: t("Example: Image description"),
                                 }}
                             />
                         </FrameBody>
