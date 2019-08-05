@@ -8,7 +8,7 @@
     .embedExternal-content {
         width: auto;
         max-width: $embed_width;
-        display: inline-block;
+        display: block;
 
         @include ieHack {
             width: 100%;
@@ -21,7 +21,6 @@
     display: block;
     position: relative;
     margin: {
-        left: auto;
         right: auto;
     }
     max-width: 100%;

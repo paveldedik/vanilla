@@ -26,7 +26,7 @@
 
 .embedExternal-content {
     position: relative;
-    margin: auto;
+    //margin: auto;
     width: $embed_width;
     max-width: 100%;
     text-align: center;
@@ -40,6 +40,12 @@
     > * {
         margin: auto !important;
     }
+
+    .embed-focusableElement {
+        margin-left: 0 !important;
+    }
+
+
 }
 
 .embedExternal-ratio {
@@ -129,4 +135,5 @@
 
 .embed-focusableElement {
     cursor: pointer;
+    //display: inline-flex;
 }
