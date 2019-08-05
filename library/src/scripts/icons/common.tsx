@@ -386,7 +386,7 @@ export function accessibleImageMenu(message?: string, className?: string) {
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
-            className={classNames("icon", "icon-accessibleImageMenuIcon", className)}
+            className={classNames("icon", "icon-accessibleImageMenuIcon", iconClasses().accessibleAltText ,className)}
             aria-hidden="true"
         >
             <title>{title}</title>

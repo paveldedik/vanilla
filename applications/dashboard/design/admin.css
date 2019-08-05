@@ -11653,7 +11653,6 @@ body.isMobile .Popup.hasRichEditor .Border {
 
 .embedExternal {
   display: block;
-  margin: 0 auto;
   max-width: 100%;
   width: 640px;
   position: relative;
@@ -11668,7 +11667,7 @@ body.isMobile .Popup.hasRichEditor .Border {
 
 .embedExternal-content {
   position: relative;
-  margin: auto;
+  margin-left: 30px;
   width: 640px;
   max-width: 100%;
   text-align: center;
@@ -11680,6 +11679,9 @@ body.isMobile .Popup.hasRichEditor .Border {
 }
 .embedExternal-content > * {
   margin: auto !important;
+}
+.embedExternal-content .embed-focusableElement {
+  margin-left: 0 !important;
 }
 
 .embedExternal-ratio {
@@ -11914,7 +11916,7 @@ body.isMobile .Popup.hasRichEditor .Border {
 .embedImage .embedExternal-content {
   width: auto;
   max-width: 640px;
-  display: inline-block;
+  display: block;
 }
 @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
   .embedImage .embedExternal-content {
@@ -11926,10 +11928,8 @@ body.isMobile .Popup.hasRichEditor .Border {
 .embedImage-img {
   display: block;
   position: relative;
-  margin-left: auto;
   margin-right: auto;
   max-width: 100%;
-  width: 100%;
 }
 
 /*!

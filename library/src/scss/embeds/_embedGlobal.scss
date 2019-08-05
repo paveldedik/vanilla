@@ -15,7 +15,7 @@
 
 .embedExternal {
     display: block;
-    margin: 0 auto;
+    //margin: 0 auto;
     max-width: 100%;
     width: $embed_width;
     position: relative;
@@ -27,6 +27,7 @@
 .embedExternal-content {
     position: relative;
     //margin: auto;
+    margin-left: 30px;
     width: $embed_width;
     max-width: 100%;
     text-align: center;

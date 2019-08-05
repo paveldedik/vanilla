@@ -35,12 +35,18 @@ export const iconVariables = useThemeCache(() => {
         height: 119.993,
     });
 
+    const accessibleAltText = themeVars("accessibleAltText", {
+        width: 20,
+        height: 20,
+    })
+
     return {
         standard,
         newFolder,
         fileType,
         attachmentError,
         vanillaLogo,
+        accessibleAltText,
     };
 });
 
@@ -73,11 +79,17 @@ export const iconClasses = useThemeCache(() => {
         height: unit(vars.vanillaLogo.height),
     });
 
+    const accessibleAltText = style("accessibleAltText", {
+        width: unit(vars.accessibleAltText.width),
+        height: unit(vars.accessibleAltText.height),
+    });
+
     return {
         standard,
         newFolder,
         fileType,
         attachmentError,
         vanillaLogo,
+        accessibleAltText,
     };
 });
