@@ -15,7 +15,7 @@ import { t } from "@library/utility/appUtils";
 import { EditorEventWall } from "@rich-editor/editor/pieces/EditorEventWall";
 import { embedMenuClasses } from "@rich-editor/editor/pieces/embedMenuStyles";
 import classNames from "classnames";
-import React, { useCallback, useState, useRef, useEffect } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { useLastValue } from "@vanilla/react-utils";
 
 interface IProps extends IImageMeta {
@@ -66,6 +66,7 @@ export function ImageEmbedMenu(props: IProps) {
                 <DropDown
                     title={t("Alt Text")}
                     buttonContents={icon}
+                    buttonBaseClass={ButtonTypes.ICON_COMPACT}
                     className={classNames("u-excludeFromPointerEvents")}
                     onVisibilityChange={setVisible}
                     isVisible={isVisible}

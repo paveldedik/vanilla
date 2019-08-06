@@ -87,8 +87,8 @@ export const embedMenuClasses = useThemeCache(() => {
         "embedMetaDataMenu",
         {
             ...absolutePosition.topLeft(),
-            width: globalVars.buttonIcon.size,
-            height: globalVars.buttonIcon.size,
+            width: globalVars.icon.sizes.default,
+            height: globalVars.icon.sizes.default,
             transform: `translateX(-${menuTransformWithGutter}) translateY(-${menuTransformWithoutGutter})`,
             zIndex: 1,
         },
@@ -99,6 +99,9 @@ export const embedMenuClasses = useThemeCache(() => {
 
     const menuInsets = style("embedEditorInsert", {
         marginLeft: 30,
+        ...mediaQueriesEmbed.noRoomForMenuOnLeft({
+            marginLeft: 0,
+        }),
     });
 
     return {
